@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识Ajax</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="../../../小项目/jQuery/jQuery.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="top"></div>
+        <button>提交</button>
+    </div>
+    <script>
+        $(function(){
+            $("button").on("click", function(){
+                $.ajax({
+                    type: "GET",
+                    url:"http://127.0.0.1:8000/user",
+                    data: {
+                        name: "孙悟空",
+                        age: 500,
+                        gender: "男"
+                    },
+                    success: function(res){
+                        $(".top")[0].innerHTML = res
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

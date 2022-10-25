@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1、创建xhr对象
+        const xhr = new XMLHttpRequest()
+
+        //2、调用xhr.open()函数，指定 请求方式 与 URL地址
+        xhr.open("get", "http://127.0.0.1:8000/user")
+
+        //3、调用xhr.send()函数，发起Ajax请求
+        xhr.send()
+
+        //4、监听xhr.onreadystatechange事件
+        xhr.onreadystatechange = function(){
+        //监听xhr对象的 请求状态 readyState；和服务器 响应状态 Status
+        if(xhr.readyState === 4 && xhr.status === 200) {
+             //打印服务器响应回来的数据
+                console.log(xhr.responseText)
+        }
+}
+    </script>
+</body>
+</html>

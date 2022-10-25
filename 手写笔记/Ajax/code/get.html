@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(../../小项目/imag/watercolor-1336856.jpg) center no-repeat;
+            background-size: cover;
+        }
+
+        .form{
+            height: 400px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .top{
+            height: 300px;
+            width: 300px;
+            margin: 20px auto;
+            border: solid 5px #234567;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, .6);
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: bisque;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div class="top"></div>
+        <button>请求</button>
+    </div>
+    <script>
+        const btn = document.querySelector("button");
+        const result = document.querySelector(".top")
+
+        btn.addEventListener("click", function(){
+            //1、创建对象
+            const xhr = new XMLHttpRequest();
+
+            //2、初始化，设置请求方法和URL
+            xhr.open("GET", "http://127.0.0.1:80/server");
+
+            //3、发送
+            xhr.send()
+
+            //4、事件绑定
+            xhr.addEventListener("readystatechange", function(){
+                //判断
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200 && xhr.status < 300){
+                        //处理结果
+                        console.log(xhr.status) //状态码
+                        console.log(xhr.statusText) //状态字符串
+                        console.log(xhr.getAllResponseHeaders())  //所有响应头
+                        console.log(xhr.response)   //响应体
+
+                        result.innerHTML = xhr.response
+                    }else{
+
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>
