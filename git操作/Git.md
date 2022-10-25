@@ -11,7 +11,7 @@ Git是一个分布式的代码管理工具
 - **版本库：**工作区有一个隐藏目录 **.git**，这个不算工作区，而是 Git 的版本库
 - **远程库：** 代码托管的服务器，例如gitee, github
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\gitProcess.jpg)
+![](./img/gitProcess.jpg)
 
 ### 2 安装与卸载Git环境
 
@@ -170,45 +170,45 @@ git init
 
 ① 在我们每次提交代码时(commit)，都会形成一个时间节点
 
-<img src="C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branch-one.png" style="zoom: 50%;" />
+![](./img/branch-one.png)
 
 ② 当我们提交的次数变多时就会形成一条由时间节点组成的时间线
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branch-two.png)
+![](./img/branch-two.png)
 
 ③ **每个分支都代表一条时间线，分支的本质就是一个指针**，默认指向最新节点(例如最初的master分支)
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branch-three.png)
+![](./img/branch-three.png)
 
 > 注意：head指针表示我们目前处于哪个分支上
 
 ④ 项目初始化时并提交后默认只有一个分支，当我们创建一个新分支时，便创建了一个新分支指针
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branck-four.png)
+![](./img/branch-four.png)
 
 ⑤ 若我们切换到新指针，且新提交一次
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branck-five.png)
+![](./img/branch-five.png)
 
 ⑥ 若我们切换到master分支，并合并dev分支
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branck-six.png)
+![](./img/branch-six.png)
 
 ⑦ 若我们切换到dev分支进行一次提交，之后再切换回master分支进行一次提交，此时时间线便会分叉，犹如平行宇宙的诞生
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branch-seven.png)
+![](./img/branch-seven.png)
 
 ⑧ 若master分支与dev分支都修改了同一个文件并提交，此时便会出现冲突，解决冲突合并后
 
 
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branch-eight.png)
+![](./img/branch-eight.png)
 
 2 分支的作用？
 
 > 各个分支可以开发不同的功能，相互独立，并且可以合并，将所有功能集中到一个分支上
 
-![](C:\Users\11292\Desktop\AllThing\前端学习笔记\git操作\img\branch.png)
+![](./img/branch.png)
 
 #### 5.2 基本语法
 
